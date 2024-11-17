@@ -12,7 +12,7 @@
 
         "image": "<IMAGE1_NAME>",
         "essential": true,
-        "name": "blacklist-app-container-2"
+        "name": "app-entrega4-2"
       }
     ],
 
@@ -22,5 +22,5 @@
     "networkMode": "awsvpc",
     "cpu": "1024",
     "memory": "3072",
-    "family": "blacklist-app-task-2"
+    "family": "entrega4-2-tarea"
   }
