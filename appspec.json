@@ -7,7 +7,7 @@
         "Properties": {
           "TaskDefinition": "<TASK_DEFINITION>",
           "LoadBalancerInfo": {
-            "ContainerName": "app-entrega4-2-error",
+            "ContainerName": "app-entrega4-2",
             "ContainerPort": 5000
           }
         }

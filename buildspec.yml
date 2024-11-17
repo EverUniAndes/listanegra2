@@ -32,7 +32,7 @@ artifacts:
     DefinitionArtifact:
       files:
         - appspec.yaml
-        - taskdef.json
+        - taskdefError.json
     ImageArtifact:
       files:
         - imageDetail.json
