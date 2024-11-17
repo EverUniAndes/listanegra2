@@ -5,23 +5,23 @@ phases:
     commands:
       - pip install -r requirements.txt
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 528757811031.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region sa-east-1 | docker login --username AWS --password-stdin 539247488585.dkr.ecr.sa-east-1.amazonaws.com
   build:
     commands:
       - echo Ejecucion de pruebas unitarias
       - pytest --cov-fail-under=70 --cov=src
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t uniandes_projects .
-      - docker tag uniandes_projects:latest 528757811031.dkr.ecr.us-east-1.amazonaws.com/uniandes_projects:latest
+      - docker build -t listanegra2 .
+      - docker tag listanegra2:latest 539247488585.dkr.ecr.sa-east-1.amazonaws.com/listanegra2:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 528757811031.dkr.ecr.us-east-1.amazonaws.com/uniandes_projects:latest
+      - docker push 539247488585.dkr.ecr.sa-east-1.amazonaws.com/listanegra2:latest
       - echo Writing Image Definitions file...
-      - printf '[{"name":"blacklist-app-container-2","imageUri":"528757811031.dkr.ecr.us-east-1.amazonaws.com/uniandes_projects:latest"}]' > imagedefinitions.json
-      - printf '{"ImageURI":"528757811031.dkr.ecr.us-east-1.amazonaws.com/uniandes_projects:latest"}' > imageDetail.json
+      - printf '[{"name":"app-entrega4-2","imageUri":"539247488585.dkr.ecr.sa-east-1.amazonaws.com/listanegra2:latest"}]' > imagedefinitions.json
+      - printf '{"ImageURI":"539247488585.dkr.ecr.sa-east-1.amazonaws.com/listanegra2:latest"}' > imageDetail.json
       - cat imagedefinitions.json 
 artifacts:
   files:
